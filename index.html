@@ -3,8 +3,27 @@
 <head>
     <meta charset="UTF-8" />
     <title>Foxlake Games</title>
+    <style>
+        body {
+            font-size: 2em;
+            text-align: center;
+            margin-top: 20%;
+        }
+    </style>
+    <script>
+        function startColorCycle() {
+            const colors = ['red', 'orange', 'yellow', 'green', 'blue', 'indigo', 'violet'];
+            let index = 0;
+            const text = document.getElementById('colorText');
+
+            setInterval(() => {
+                text.style.color = colors[index];
+                index = (index + 1) % colors.length;
+            }, 500);
+        }
+    </script>
 </head>
-<body>
-    vibeo game
+<body onload="startColorCycle()">
+    <div id="colorText">vibeo game</div>
 </body>
 </html>
